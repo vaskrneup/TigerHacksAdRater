@@ -12,19 +12,18 @@ class EnvManager:
             raise ValueError(f"Environment File must be of type JSON, Given: `{env_file}`")
 
         self.env_file: Path = env_file or self.DEFAULT_ENV_FILE
-        self.env_file_data: dict[str, any] = {}
+        self.__env_file_data: dict[str, any] = {}
 
         if not env_file.exists():
             self.write_env_file()
 
     def read_env_file(self) -> None:
         with open(self.env_file, "r") as env_file:
-            self.env_file_data = json.load(env_file)
+            self.__env_file_data = json.load(env_file)
 
     def write_env_file(self) -> None:
         with open(self.env_file, "w") as env_file:
-            json.dump(self.env_file_data, env_file)
+            json.dump(self.__env_file_data, env_file)
 
-    @property
-    def data(self) -> dict[str, any]:
-        return self.env_file_data
+    def get(self, key: str, default: any = None) -> str:
+        return self.__env_file_data.get(key, default=default)
