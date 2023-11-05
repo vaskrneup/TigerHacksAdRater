@@ -1,6 +1,5 @@
 const displayResponse = (displayText) => {
     chrome.storage.local.set({responseData: {response: displayText}});
-    alert("Hello !!");
 }
 
 const previousResponses = {}
@@ -12,13 +11,11 @@ function updateTabInfo() {
         title: currentTitle,
         url: currentURL
     };
-    alert(currentURL + "    " + currentTitle)
 
     if (currentURL in previousResponses) {
         const responseContent = previousResponses[currentURL];
         displayResponse(responseContent);
 
-        alert("2")
     } else {
         displayResponse("loading...");
 
@@ -36,7 +33,6 @@ function updateTabInfo() {
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert("3")
             });
     }
 }

@@ -15,16 +15,16 @@
 //});
 
 
-chrome.storage.local.get(['responseData'], function(result) {
-  if (chrome.runtime.lastError) {
-    const responseDataElement = document.getElementById('context');
-    responseDataElement.textContent = 'Server response: '+'Loading';
-  } else {
-    const responseData = result.responseData;
-    const responseDataElement = document.getElementById('context');
-    responseDataElement.textContent = 'Server response: ' + responseData.response;
-    // Now, you can use responseData as an object.
-  }
+chrome.storage.local.get(['responseData'], function (result) {
+    if (chrome.runtime.lastError) {
+        const responseDataElement = document.getElementById('context');
+        responseDataElement.textContent = 'Server response: ' + 'Loading';
+    } else {
+        const responseData = result.responseData;
+        const responseDataElement = document.getElementById('context');
+        responseDataElement.textContent = responseData.response;
+        // Now, you can use responseData as an object.
+    }
 });
 
 //document.addEventListener('DOMContentLoaded', function () {

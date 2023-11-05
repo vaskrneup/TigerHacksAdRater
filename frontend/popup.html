@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SImple extension</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-    <div>
-        <h2 id="lol">Community Notes</h2>
-<!--        <li id="concerts"></li>-->
-        <p id="context"></p><br>
-        <form action="/submit">
-            <textarea placeholder="What do you think of this article?"></textarea>
-            <button value="submit">Helpful</button><button value="submit">Misleading</button>
-        </form>
-    </div>
+<div>
+    <h2 id="lol">Community Notes</h2>
+    <!--        <li id="concerts"></li>-->
+    <p id="loader"></p>
+    <p id="context">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur corporis est exercitationem,
+        inventore laudantium modi numquam optio perferendis, porro quae repellendus sunt voluptate voluptatum!
+        Consequatur harum optio quas repudiandae! Quas!</p><br>
+    <form action="/submit">
+        <textarea placeholder="What do you think of this article?"></textarea>
+        <button value="submit">Helpful</button>
+        <button value="submit">Misleading</button>
+    </form>
+</div>
 </body>
 <script src="script/popup.js"></script>
 <script src="script/background.js"></script>
