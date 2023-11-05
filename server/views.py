@@ -25,4 +25,4 @@ async def submit():
             f"add context for readers {text}"
         )
 
-    return {"response": response}
+    return {"response": response, "url": data.get("url")}
