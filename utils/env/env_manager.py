@@ -5,7 +5,7 @@ from pathlib import Path
 class EnvManager:
     DEFAULT_ENV_FILE: Path = Path("PRIVATE_env.json")
 
-    def __init__(self, env_file: (Path | str) = None):
+    def __init__(self, env_file=None):
         env_file = env_file or self.DEFAULT_ENV_FILE
         env_file: Path = Path(env_file) if type(env_file) is not Path else env_file
 

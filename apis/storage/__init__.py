@@ -3,8 +3,8 @@ from pathlib import Path
 
 
 class Storage:
-    def __init__(self, storage_file: (Path | str)):
-        self.storage_file: (Path | str) = storage_file
+    def __init__(self, storage_file):
+        self.storage_file = storage_file
         self.data: list[dict] = []
 
     def save_to_file(self):
