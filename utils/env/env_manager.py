@@ -18,6 +18,8 @@ class EnvManager:
         if not env_file.exists():
             self.write_env_file()
 
+        self.read_env_file()
+
     def read_env_file(self) -> None:
         with open(self.env_file, "r") as env_file:
             self.__env_file_data = json.load(env_file)
@@ -28,3 +30,6 @@ class EnvManager:
 
     def get(self, key: str, default: any = None) -> str:
         return self.__env_file_data.get(key, default)
+
+
+env = EnvManager()
