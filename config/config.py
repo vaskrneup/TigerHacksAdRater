@@ -1,5 +1,8 @@
+from apis.storage import Storage
+
+
 class Config:
-    pass
+    storage_config = Storage("user_feedback.json")
 
 
 config = Config()
