@@ -13,8 +13,9 @@ chatgpt_get_context_for_readers: OpenAIChatGptAPI = OpenAIChatGptAPI([{
 
 @app.route('/submit', methods=['POST', 'GET'])
 async def submit():
-    if request.method == "GET":
-        data = request.get_json()  # Assuming you're sending JSON data
+    data = request.get_json()  # Assuming you're sending JSON data
+
+    if "title" in data:
         text = data.get('title', '')
 
         response = "loading..."

@@ -16,9 +16,6 @@
       ],
       "js": [
         "script/content-script.js"
-      ],
-      "css": [
-        "style/style.css"
       ]
     }
   ],
